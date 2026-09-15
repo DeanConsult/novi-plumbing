@@ -128,13 +128,9 @@
     .hero-form-header h3 { color: var(--white); font-size: 1.05rem; font-weight: 800; margin-bottom: 4px; }
     .hero-form-header p { color: rgba(255,255,255,0.82); font-size: 0.82rem; }
     .hero-form-body { padding: 20px 24px 24px; }
-    .hf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .hf-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
-    .hf-group label { font-size: 0.76rem; font-weight: 700; color: #374151; letter-spacing: .02em; }
-    .hf-group label .req { color: #c0392b; }
-    .hf-group input, .hf-group select, .hf-group textarea { padding: 9px 11px; border: 1.5px solid #e5e7eb; border-radius: 6px; font-size: 0.88rem; font-family: inherit; background: #fafafa; color: #1a1a1a; width: 100%; }
-    .hf-group textarea { min-height: 72px; resize: vertical; }
-    .hf-submit { background: var(--teal); color: var(--white); border: none; padding: 13px; border-radius: var(--radius); font-size: 0.95rem; font-weight: 800; cursor: pointer; width: 100%; font-family: inherit; letter-spacing: .04em; }
+    .hero-form-body .form-row input, .hero-form-body .form-row textarea, .hero-form-body .form-row select { background: var(--white); }
+    .form-row input:focus, .form-row textarea:focus, .form-row select:focus { outline: none; border-color: var(--teal); }
+    .form-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 10px; }
 
     @media (max-width: 860px) {
       .hero-split { grid-template-columns: 1fr; }
@@ -280,29 +276,23 @@
         <div class="hero-form-body">
           <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="db1e8c49-c8de-4bc0-aa25-7f8de025bc2d" />
-            <input type="hidden" name="subject" value="New Lead — Novi Plumbing" />
             <input type="hidden" name="from_name" value="Novi Plumbing" />
+            <input type="hidden" name="subject" value="New Lead — Novi Plumbing" />
             <input type="hidden" name="redirect" value="https://www.noviplumb.com/thank-you/" />
             <input type="checkbox" name="botcheck" style="display:none" />
-            <div class="hf-row">
-              <div class="hf-group">
-                <label>First Name <span class="req">*</span></label>
-                <input type="text" name="first_name" placeholder="First" required />
-              </div>
-              <div class="hf-group">
-                <label>Last Name <span class="req">*</span></label>
-                <input type="text" name="last_name" placeholder="Last" required />
-              </div>
+            <div class="form-row">
+              <label>Your Name *</label>
+              <input type="text" name="name" placeholder="John Smith" required />
             </div>
-            <div class="hf-group">
-              <label>Email <span class="req">*</span></label>
-              <input type="email" name="email" required />
+            <div class="form-row">
+              <label>Phone Number *</label>
+              <input type="tel" name="phone" placeholder="(248) 000-0000" required />
             </div>
-            <div class="hf-group">
-              <label>Phone Number <span class="req">*</span></label>
-              <input type="tel" name="phone" required />
+            <div class="form-row">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="you@email.com" />
             </div>
-            <div class="hf-group">
+            <div class="form-row">
               <label>Service Needed</label>
               <select name="service">
                 <option value="">— Select a service —</option>
@@ -316,11 +306,12 @@
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div class="hf-group">
-              <label>Comment <span class="req">*</span></label>
-              <textarea name="comment" required></textarea>
+            <div class="form-row">
+              <label>Comment (optional)</label>
+              <textarea name="message" placeholder="Briefly describe your plumbing issue..."></textarea>
             </div>
-            <button type="submit" class="hf-submit">SUBMIT</button>
+            <button type="submit" class="form-submit">Send My Request &rarr;</button>
+            <p class="form-note">No spam. We only contact you about your inquiry.</p>
           </form>
         </div>
       </div>
@@ -499,7 +490,7 @@
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="db1e8c49-c8de-4bc0-aa25-7f8de025bc2d" />
       <input type="hidden" name="from_name" value="Novi Plumbing" />
-      <input type="hidden" name="subject" value="New Lead — Novi Plumbing (Contact Form)" />
+      <input type="hidden" name="subject" value="New Lead — Novi Plumbing" />
       <input type="hidden" name="redirect" value="https://www.noviplumb.com/thank-you/" />
       <input type="checkbox" name="botcheck" style="display:none" />
       <div class="form-row">
