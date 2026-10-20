@@ -30,6 +30,7 @@
     "name": "Novi Plumbing",
     "url": "https://www.noviplumb.com",
     "telephone": "+12483010975",
+    "image": ["https://www.noviplumb.com/images/istockphoto-1412399528-612x612.jpg"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1487 Nardeer St",
@@ -41,7 +42,10 @@
     "description": "Residential and commercial plumbing repair and installation in Novi MI and Metro Detroit. 20+ years experience. 24-hour emergency service.",
     "areaServed": ["Novi MI", "Metro Detroit", "Oakland County", "Farmington Hills", "Northville", "Plymouth", "Wixom", "Walled Lake", "Commerce Township"],
     "priceRange": "$$",
-    "openingHours": "Mo-Su 00:00-24:00",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "18:00" }
+    ],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": "42.4806",
